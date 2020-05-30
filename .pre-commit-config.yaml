@@ -23,3 +23,11 @@ repos:
     hooks:
       - id: prettier
         name: Prettier
+
+  - repo: local
+    hooks:
+      - id: dockerfile-provides-entrypoint
+        name: hadolint
+        language: docker_image
+        entry: --entrypoint hadolint hadolint/hadolint:latest-debian
+        files: Dockerfile
